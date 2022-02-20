@@ -7,26 +7,37 @@ function submitForm(e) {
   let userFront = document.getElementById("username").value;
   let passFront = document.getElementById("password").value;
   loaderVisible();
-  setTimeout(loaderInvisible, 500)
-  fetch("https://fakestoreapi.com/users")
+  functionAsync()
+  async function functionAsync(){
+  try {
+    await fetch("https://fakestoreapi.com/users")
     .then((resp) => resp.json())
     .then((data) => {
  
       for (let i = 0; i < data.length; i++) {
-        if (data[i].username === userFront && data[i].password === passFront) {
-          NewTab();
-          resetLabel
-          form.reset();
+        if (data[i].username !== userFront && data[i].password !== passFront) {
+          document.querySelector(".user-message").style.display = "flex";
+          
           
         } else {
-          document.querySelector(".user-message").style.display = "flex";
+          NewTab();
+          form.reset();
+          document.querySelector(".user-message").style.display = "none";
         }
         
         
       }
     })
+  }
+  catch(err){
+    console.log(err)
+  }
+  finally{
+    loaderInvisible();
+  }
+  }
  
-    
+   
 }
 
 function NewTab() {
