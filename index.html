@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+ 
+  <title>Log In</title>
+</head>
+
+<body>
+  <div class="loader-holder">
+    <div class="loader">
+    </div>
+
+  </div>
+ <div class="main">
+   <form id="formLogin" autocomplete="off">
+     <label class="heading" for="formLogin">Login to admin panel</label>
+     <input type="text" id="username" placeholder="Enter Username">
+     <input type="text" id="password" placeholder="Enter Password">
+     <label class="user-message">* Incorect username or password</label>
+     <button type="submit" id="submit">Submit</button>
+ 
+   </form>
+   <button class="existing-users">SHOW <br> existing users</button>
+   <div class="users"></div>
+ </div>
+
+
+  <script type="module" src="script.js" ></script>
+</body>
+
+</html>
