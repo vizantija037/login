@@ -19,8 +19,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 500px;
+    min-width: 30vw;
+    max-width: 400px;
+    height: 50vh;
 }
 input[type = text]{
     width: 80%;
